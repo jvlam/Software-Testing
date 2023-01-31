@@ -45,7 +45,32 @@
     - Coder  -  Programmer - Developer - Software Engineer   
 ### 3.2 TESTER/QC/QA
 ### 3.3 TEST MANAGER
+- sếp của dân QC/Tester, thường đi lên từ QC/Tester
+- nhiệm vụ của Test Manager là:
+    - phối hợp với PM (Project Manager) để cùng tham gia vào các công đoạn kiểm thử phần mềm, để lên kế hoạch kiểm thử ap
+    - phân bổ nhân lực, QC/Tester nào sẽ test dự án/module/chức năng nào
+    - để xuất mua những trang thiết bị/ tài nguyên cần thiết hỗ trợ cho việc kiểm thử 
+    - bàn thảo với PM về hiện trạng bug 
 ### 3.4 USER, END-USER
+- Người dùng, người dùng cuối là chốt chặn cuối cùng của công việc kiểm thử phần mềm
+- Họ sẽ dùng thử/thật app và cho feedback/phản hồi rằng app xài đc cho công việc
+của hoặc app kông giúp ích gì haocwj app nên cải tiế thêm tính năng gì để dùng phù hợp 
+- Việc người dùng cuối/user dùng app rồi chấp nhận nó đưa nó vào trong công việc hàng ngày - còn gọi là NGHIỆM THU SẢN PHẨM - UAT - USER ACCEPTANCE TESTING
+- có 2 loại app (nhìn theo góc độ phổ biến cho user)
+    - GENERIC APP (app dành cho số đông, app phổ thông, tool tiện ích)
+        + EX: Game, Cococ, firefox, word, excel, photoshop : app viết cho nhiều người dùng
+            + có phiên bản download trên mạng, hoặc dùng thử online 
+            + dùng thử trải nghiệm, feedback, send bug report
+            + đưa ra nhiều phiên bản khác nhau tùy từng giai đoạn làm app để collect bug/feedback
+                + các phiên bản: Alpha, Beta, RC (Release Candidate), Preview, Stable/LTS, Nightly Build, Development Build(phiên bản thử nghiệm của dân dev công bố sớm cho thiên hạ)
+    - CUSTOM APP/CUSTOMIZED APP/BE-SPOKE APP ( app đc viết riêng cho nhu cầu của ai đố, app đặc chế cho ai đó)
+        + EX: App quản lí ngân hàng TPBank, App quản lí tồn kho, bán hàng của TGDD : app viết riêng cho nhu cầu của ai đó, đơn vị nào đó 
+            + không có download, viết xong bàn giao ngay cho chính chủ đặt hàng 
+            + Dev team nghĩ rằng đã đến lúc cài đặt cho khách hàng dùng thử user chính là nhân viên của các công ty đặt hàng làm app sẽ xài thử trong công việc của họ
+            + cô thu ngân, dùng thử tính năng tính tiền ...
+            + cô giao dịch viên, dùng thử tính năng quản lí sổ tiết kiệm  
+            + cho feedback...
+    
 
 
 ## [NGOẠI TRUYỆN - HỌC CHI TIẾT HƠN Ở BÊN SWR]
@@ -65,3 +90,34 @@
     - ["kết:"]()
         - Câu phát biểu liên quan đến cảm xúc, trải nghiệm khi xài app, khi xài 1 tính năng bất kì (ko focus vào 1 tính năng cụ thể focus vào 1 tính năng cụ thể - focus vào trải nghiệm app nói chung - NON) ADJECTIVE/ADVERB: từ diễn tả tính chất!!!
         App phải dễ dùng, xài đã, tiện lợi, an toàn, bảo mật, an tâm, nhanh chậm đẹp xấu to nhỏ.
+
+
+# II. 7 viên ngọc rồng - 7 NGUYÊN LÍ CỦA KIỂM THỬ PHẦN MỀM - 7 PRINCIPLES OF SOFTWARE TESTING 
+## 1. TESTING SHOWS THE PRESENCE OF DEFECTS
+- kiểm thử phần mềm là tìm bug/tìm sai sót của app của quá trình làm app
+- Bug luôn tồn tại trong app dù test kĩ cỡ nào !! có app là có bug/còn bug
+- nhiệm vụ của kiểm thử là tìm mọi cách/ cố gắng lôi ra càng nhiều bug càng tốt, càng nhiều bug nghiêm trọng càng tốt!!!
+- Lập trình viên phải có trách nhiệm viết code tử tế QC, phải test với trách nhiệm cao nhất, không xảy ra bug nghiêm trọng vì ta cần phải dữ uy tín với khách hàng 
+## 2. EXHAUSTIVE TESTING IS NOT POSSIBLE
+- Dân QC ko thể test hết các khả năng/ các tình huống xài app của user
+- dân QC ko thể mô phỏng/ giả lập/ dự đoán hết các hành vi sử dụng app của user để ngăn chặn những bug họ có thể gặp trong tương lai xài app 
+
+
+
+## [NGOẠI TRUYỆN]
+- bàn về những con số gắn với kiến thức lập trình
+- OOP: 4   +  5    
+    AEIP    SOLID
+- AGILE: 4   +   12
+    tuyên ngôn   nguyên lí
+- DATABASE: 
+    - 3 loại SQL
+        + DDL: create/drop
+        + DML: select/update/delete
+        + DCL(Data Control Language): grant/revoke
+    - 3 loại dạng chuẩn phổ biến
+        + 1NF, 2NF - Normaliztion Form - kĩ thuật đánh giá việc thiết kế ERD/Table tốt hay không ?
+- DESIGN PATTERNS: 
+    - 23 thiết kế chuẩn về các class cần có cho những bài toán quen thuộc nào đó 
+- SOFTWARE TESTING:
+- SWR302: 3 góc nhìn - why, what, who 
