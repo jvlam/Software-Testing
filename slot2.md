@@ -92,6 +92,11 @@ của hoặc app kông giúp ích gì haocwj app nên cải tiế thêm tính n�
         App phải dễ dùng, xài đã, tiện lợi, an toàn, bảo mật, an tâm, nhanh chậm đẹp xấu to nhỏ.
 
 
+
+===============================================================================================================================================================================
+
+
+
 # II. 7 viên ngọc rồng - 7 NGUYÊN LÍ CỦA KIỂM THỬ PHẦN MỀM - 7 PRINCIPLES OF SOFTWARE TESTING 
 ## 1. TESTING SHOWS THE PRESENCE OF DEFECTS
 - kiểm thử phần mềm là tìm bug/tìm sai sót của app của quá trình làm app
@@ -102,7 +107,51 @@ của hoặc app kông giúp ích gì haocwj app nên cải tiế thêm tính n�
 - Dân QC ko thể test hết các khả năng/ các tình huống xài app của user
 - dân QC ko thể mô phỏng/ giả lập/ dự đoán hết các hành vi sử dụng app của user để ngăn chặn những bug họ có thể gặp trong tương lai xài app 
 
+- Ví Dụ: TEST APP CALCULATOR CỦA WINDOWS, TEST CHỨC NĂNG + - * /
+    + cần phải test :
+        - 2 số nhỏ coi có đúng không ?
+        - 2 số, 1 số nhỏ, 1 số lớn cọi có đúng không ?
+        - 2 số mà có khả năng 
+        - 2 số dương và âm 
+        - 2 số âm ...
 
+    + DO KHÔNG TEST HẾT KHẢ NĂNG XÀI APP DO ĐÓ VỀ LÍ THUYẾT VẪN CÓ THỂ TIỀM ẨN BUG DO RƠI VÀO TÌNH HUỐNG TA CHƯA TEST KỊP, MÀ ĐỂ TEST HẾT THÌ TÍNH NĂNG 
+    TRIỆU NĂM 
+    + PHẢI CÓ KĨ THUẬT NÀO ĐÓ, CHÁC THỨC NÀO ĐÓ ĐỂ KHÔNG TEST HẾT CÁC TÌNH HUỐNG XÀI APP CỦA USER MÀ VẪN KẾT LUẬN/VẪN CÓ THỂ RELEASE SẢN PHẨM
+## 3. EARLY-TESTING
+- kiểm thử càng sớm càng tốt, thậm chí ngay cả khi chưa viết code thì dân qc cũng đã phải tham gia vào quá trình kiểm thử bằng cách review các tài liệu,
+  Requirements. Design 
+    + Dân QC sẽ giao tiếp luôn với dân BA để hiểu hệ thống từ sớm, có thể đề xuất ...
+    + thêm 1 góc nhìn của người sẽ giúp việc phân tích requirements, design thêm chính xác
+## 4. DEFECTS CLUSTERING - SỰ PHÂN BỐ/SỰ TẬP TRUNG CỦA BUG
+- BÀN về sự phân bố/ sự tập trung của 1 thứ gì đó, người ta hay nhắc đến nguyên lí 80/20 - nguyên lí Pareto - bàn về sự tập trung, tỉ trọng của những thứ 
+  quan trọng: 20% thời gian bỏ ra mà đạt được 80% kết quả -> tốt về mặt quản lí 
+
+- Nhìn trong kiểm thử phẩn mềm cũng có nguyên lí này: bug thường tập trung hay xuất hiện nhiều ở một số chỗ, xuất hiện ít ở chỗ khác 
+    + App mà có sử dụng các thiết bị ngoại vi: camera, sensor, máy đọc thẻ
+    + App mà có kết nối với app khác, ví dụ lazada kết nối với momo, và các ví thì thường những chỗ kết nỗi này hay có bug, hay bị trục trặc
+        - do tính ổn định, tương thích, khả năng hoạt động chính xác của thiêt bị 
+        - timeout do đường truyền và độ trễ xử lí của app bên ngoài
+## 5. PESTICISE PARADOX - NGHỊCH LÍ THUỐC TRỪ SÂU!!! HIỆN TƯỢNG KHÁNG THUỐC 
+- Phun thuốc trừ sâu để tiêu diệt sâu, nhưng sâu không chết
+- Nhờ dân QC test app, nhưng lại để sót bug, bug nghiêm trọng, bug ngớ ngẩn vẫn tồn tại, QC không đóng tròn vai trò gác cổng chất lượng 
+- QC chủ quan do làm đi làm lại, test đi test lại một chức năng quen -> chủ quan, ví dụ khi tuần trước đã test phần CRUD product rồi, ổn, tuần này test chức năng
+  Order, do dân dev có sửa tùm lum code, nhưng chủ quan nghĩ rằng phần Product đã ổn, không cần test lại, chỉ tập trung test Order, chủ quan này có thể trả giá phần
+  Product
+    + giải pháp: Dân QC nên được bố trí, hoán đổi công việc/project/module kiểm thử trong 1 khoảng thời gian nào đó
+        - test Mobile app 6 tháng, 6 tháng sau chuyển qua test web app vẫn cùng app nhưng khác môi trường, khác môi trường thì tọa sự tò mò khám phá, tránh đc nhàm chán
+        lặp lại công việc 
+
+## 6. CONTEXT DEPENDENT - KIỂM THỬ PHỤ THUỘC NGỮ CẢNH
+- Loại app khác nhau (web, mobile, desktop)
+- Loại môi trường / platform/ OS khác nhau
+- thiết bị khác nhau 
+- thì phải có cách test khác nhau !!!
+
+## 7. ABSENCE OF ERRORS FALLACY - ảo tưởng, quan niệm sai về việc app ít bug
+- không gáy về việc app ít bug . app ít bug không phải là đáng tự hào 
+- đừng ảo tưởng rằng app ít bug là app ngon 
+- Việc viết app, làm app phải nhắm đến việc tạo ra giá trị cho người dùng nó .
 
 ## [NGOẠI TRUYỆN]
 - bàn về những con số gắn với kiến thức lập trình
@@ -121,3 +170,47 @@ của hoặc app kông giúp ích gì haocwj app nên cải tiế thêm tính n�
     - 23 thiết kế chuẩn về các class cần có cho những bài toán quen thuộc nào đó 
 - SOFTWARE TESTING:
 - SWR302: 3 góc nhìn - why, what, who 
+
+
+
+=================================================================================================================================================================================
+
+
+TESTING LEVEL - 4 MỨC ĐỘ KIỂM THỬ
+- quá trình viết app bắt đầu từ REQUIREMENTS 
+            ...giai đoạn khác...
+                  implementation gia đoạn viết code làm app
+- XÉT RIÊNG GIAI ĐOẠN VIẾT CODE - LÀM APP - IMPLEMENTATION CÁC REQUIREMENTS
+THÌ VIỆC HOÀN THIỆN APP, VIẾT CODE SẼ LÀM 4 BƯỚC
+* LEVEL 1 - mức 1: developer vừa viết xong hàm, hoặc class (chứa hàm/method bên trong) 
+    - class UserDTO, class DBUtil
+    # MỨC ĐƠN VỊ - UNIT LEVEL
+    - code vừa viết xong mức đơn vị, tức là hàm/ class vừa xong, phải đảm bảo hàm class xử lí ngon, chính xác thông tin 
+    - hàm() phải được test xem nhận đầu vào xử lí trả kết quả có đúng không
+    - class phải được test xem nhận đầu vào qua constructor, setter, trả về kết quả có đúng không qua getter, toString() và các lệnh return 
+
+* LEVEL 2 - mức 2: developer bắt đầu xây dựng các class phức tạp - phối hợp các class khác nhau + font-end để hình thành nên các chức năng đơn lẻ  
+    # MƯC TÍCH HỢP - INTEGRATION LEVEL 
+
+* LEVEL 3 - SYSTEM LEVEL
+* LEVEL 4 - ACCEPTANCE LEVEL
+
+====================================================
+# UNIT TESTING LEVEL - LÀ CÁCH MÀ DÂN DEV SẼ TEST CODE CỦA MÌNH !!! TEST HÀM VÀ CLASS
+- làm sao/ kĩ thuật nào để test code/test hàm/ test class của mình ?
+- có những kĩ thuật sau để làm unit test
+
+1. In kết quả xử lí của hàm/method ra màn hình 
+
+2. in kết quả xử lí của hàm ra log file, .txt file
+
+3. pop-up lên desktop, trình duyệt
+
+4. ngầu nhất: dùng 1 bộ thư viện trợ giúp quá trình kiểm thử hàm/class mà không cần in ra kết quả xử lí của hàm, chỉ dùng 2 tín hiệu xanh-đỏ
+dùng 1 bộ thư viện phụ trợ - còn gọi là unit test framework
+- Unit test, Unit Test framework liên quan đến một vài khái niệm quan trọng sau
+    + CI (là 1 phần dầu của tiến trình CI/CD/DevOps) - Continuous Integration - Tích hợp liên tục
+    + TDD - Test Driven Development
+    + DDT - Data Driven Testing 
+
+
