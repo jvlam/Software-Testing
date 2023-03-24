@@ -100,10 +100,10 @@ của hoặc app kông giúp ích gì haocwj app nên cải tiế thêm tính n�
 # II. 7 viên ngọc rồng - 7 NGUYÊN LÍ CỦA KIỂM THỬ PHẦN MỀM - 7 PRINCIPLES OF SOFTWARE TESTING 
 ## 1. TESTING SHOWS THE PRESENCE OF DEFECTS
 - kiểm thử phần mềm là tìm bug/tìm sai sót của app của quá trình làm app
-- Bug luôn tồn tại trong app dù test kĩ cỡ nào !! có app là có bug/còn bug
+- Bug ["luôn tồn tại trong app"]() dù test kĩ cỡ nào !! có app là có bug/còn bug
 - nhiệm vụ của kiểm thử là tìm mọi cách/ cố gắng lôi ra càng nhiều bug càng tốt, càng nhiều bug nghiêm trọng càng tốt!!!
 - Lập trình viên phải có trách nhiệm viết code tử tế QC, phải test với trách nhiệm cao nhất, không xảy ra bug nghiêm trọng vì ta cần phải dữ uy tín với khách hàng 
-## 2. EXHAUSTIVE TESTING IS NOT POSSIBLE
+## 2. EXHAUSTIVE TESTING IS IMOSSIBLE
 - Dân QC ko thể test hết các khả năng/ các tình huống xài app của user
 - dân QC ko thể mô phỏng/ giả lập/ dự đoán hết các hành vi sử dụng app của user để ngăn chặn những bug họ có thể gặp trong tương lai xài app 
 
@@ -141,13 +141,11 @@ của hoặc app kông giúp ích gì haocwj app nên cải tiế thêm tính n�
     + giải pháp: Dân QC nên được bố trí, hoán đổi công việc/project/module kiểm thử trong 1 khoảng thời gian nào đó
         - test Mobile app 6 tháng, 6 tháng sau chuyển qua test web app vẫn cùng app nhưng khác môi trường, khác môi trường thì tọa sự tò mò khám phá, tránh đc nhàm chán
         lặp lại công việc 
-
 ## 6. CONTEXT DEPENDENT - KIỂM THỬ PHỤ THUỘC NGỮ CẢNH
 - Loại app khác nhau (web, mobile, desktop)
 - Loại môi trường / platform/ OS khác nhau
 - thiết bị khác nhau 
 - thì phải có cách test khác nhau !!!
-
 ## 7. ABSENCE OF ERRORS FALLACY - ảo tưởng, quan niệm sai về việc app ít bug
 - không gáy về việc app ít bug . app ít bug không phải là đáng tự hào 
 - đừng ảo tưởng rằng app ít bug là app ngon 
@@ -206,11 +204,36 @@ THÌ VIỆC HOÀN THIỆN APP, VIẾT CODE SẼ LÀM 4 BƯỚC
 
 3. pop-up lên desktop, trình duyệt
 
-4. ngầu nhất: dùng 1 bộ thư viện trợ giúp quá trình kiểm thử hàm/class mà không cần in ra kết quả xử lí của hàm, chỉ dùng 2 tín hiệu xanh-đỏ
+4. ngầu nhất: dùng 1 bộ thư viện trợ giúp quá trình kiểm thử hàm/class mà không cần in ra kết quả xử lí của hàm, c  hỉ dùng 2 tín hiệu xanh-đỏ
 dùng 1 bộ thư viện phụ trợ - còn gọi là unit test framework
 - Unit test, Unit Test framework liên quan đến một vài khái niệm quan trọng sau
-    + CI (là 1 phần dầu của tiến trình CI/CD/DevOps) - Continuous Integration - Tích hợp liên tục
+    + CI (là 1 phần đầu của tiến trình CI/CD/DevOps) - Continuous Integration - Tích hợp liên tục
     + TDD - Test Driven Development
     + DDT - Data Driven Testing 
 
+================================================================================================================
+UNIT TEST NOIS CHUNG, JUIT NÓI RIÊNG DÙNG MÀU SẮC XANH ĐỎ ĐỂ QUY ƯỚC CHO HÀM ĐÚNG HAY SAI 
+- XANH : VIỆC SO SÁNH GIỮA EXPECTED VÀ ACTUAL THẤY == NHAU
+  Hàm xử lí kết quả và trả về như kì vọng, 5! đúng là trả về 120 thiệt khi xài hàm 
+- ĐỎ : VIỆC SO SÁNH GIỮA EXPECTED VÀ ACTUAL THẤY KHÁC NHAU, != NHAU
+  HÀM XỬ LÍ KẾT QUẢ TRẢ VỀ KHÁC KÌ VỌNG!!!
+  CÓ 2 KHẢ NĂNG XẢY RA HERE!!!
+  - Hàm đúng kì vọng sai
+  - Hàm sai kì vọng đúng 
 
+- MỘT CLASS KIỂM THỬ LẠI CHỨA NHIỀU TEST CASE, CHỨA NHIỀU SO SÁNH XANH ĐỎ, QUY TẮC XANH ĐỎ TỔNG THỂ NHƯ SAU: 
+    - XANH TỔNG: TẤT CẢ CÁC TEST CASE, CÁC HÀM SO SÁNH PHẢI XANH HẾT, THÌ MỚI GOM LẠI THÀNH 1 CÁI XANH CHUNG, XANH TỔNG 
+- ĐỎ TỔNG: CHỈ CẦN 1 THẰNG TEST CASE BỊ ĐỎ, TOÀN BỘ BỊ ĐỎ
+    - CHỈ CẦN 1 THẰNG TEST/ SO SÁNH MÀ CÓ EXPECTED != ACTUAL -> ĐỎ -> HÀM CÓ VẤN ĐỀ
+
+lí do 1 thằng đỏ cả đám đỏ 
+- HÀM NẾU ĐÃ ĐƯA VÀO TEST THÌ PHẢI ĐÚNG HẾT, XANH HẾT 
+- HÀM NẾU CÓ ÍT NHẤT 1 ĐỎ, HÀM TÍNH TOÁN KO ỔN ĐỊNH, KO CHÍNH XÁC
+
+
+
+
+============================================================================================================================================
+NHẬP MÔN CI - CONTINOUS INTEGRATION NÓ LÀ PHẦN KHỞI ĐẦU CỦA QUY TRÌNH CI/CD/DEVOPS
+- chuẩn bị sẵn Github acc, url nên sửa toàn là chữ thường 
+QUY TRÌNH ĐÓNG GÓI APP!!! >.JAR, .WAR .APK SETUP.EXE 
